@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
 
-## Project info
+# Shopy - E-commerce Platform for Small Businesses
 
-**URL**: https://lovable.dev/projects/049c95fe-23b8-4d1f-992d-8d361aff4658
+## Overview
 
-## How can I edit this code?
+Shopy is a modern e-commerce platform designed specifically for small businesses. This repository contains the codebase for the Shopy marketing website.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Landing page** - Showcasing Shopy's main features and value proposition
+- **About Us** - Company mission, team, and values
+- **News Room** - Press releases and media resources
+- **Blog** - Articles and resources for small business owners
+- **Careers** - Open positions and company culture
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/049c95fe-23b8-4d1f-992d-8d361aff4658) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend Framework:** React with TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Routing:** React Router
+- **Data Fetching:** TanStack Query (React Query)
+- **Icons:** Lucide React
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v16 or later recommended)
+- npm (v7 or later recommended)
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd shopy-website
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Start the development server
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. Open your browser and visit `http://localhost:8080`
+
+## Project Structure
+
+```
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/          # shadcn/ui components
+│   │   └── ...          # Custom components
+│   ├── pages/           # Page components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions and shared logic
+│   ├── App.tsx          # Main app component with routes
+│   └── main.tsx         # Entry point
+├── tailwind.config.ts   # Tailwind CSS configuration
+└── vite.config.ts       # Vite configuration
 ```
 
-**Edit a file directly in GitHub**
+## Design System
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Colors:** Primarily using the Shopy purple color palette defined in `tailwind.config.ts`
+- **Typography:** Modern, clean sans-serif fonts
+- **Components:** Shadcn UI components customized to match Shopy branding
 
-**Use GitHub Codespaces**
+## Development Guidelines
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Follow the existing component structure when adding new features
+- Use Tailwind CSS for styling
+- Ensure responsive design for all screen sizes
+- Keep accessibility in mind (proper contrast, semantic HTML, etc.)
+- Document new components and functions with comments
 
-## What technologies are used for this project?
+## Deployment
 
-This project is built with:
+This project is set up for deployment through Lovable. To deploy:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Visit your Lovable project dashboard
+2. Click on "Publish" in the top-right corner
+3. Follow the deployment steps
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/049c95fe-23b8-4d1f-992d-8d361aff4658) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Copyright © 2023-present Shopy, Inc. All rights reserved.
