@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -57,9 +56,13 @@ const Footer = () => {
           {/* Brand section */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-shopy-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
+              <img
+                src="/favicons/favicon-32x32.png"
+                alt="Shopy logo"
+                className="w-8 h-8 rounded-lg bg-shopy-500"
+                width={32}
+                height={32}
+              />
               <span className="font-bold text-lg">Shopy</span>
             </div>
             <p className="text-gray-600 mb-4 max-w-xs">

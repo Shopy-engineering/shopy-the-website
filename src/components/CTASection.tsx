@@ -16,8 +16,8 @@ interface CTASectionProps {
 const CTASection = ({
   title = "Ready to grow your small business online?",
   description = "Join thousands of small businesses using Shopy to build and scale their online presence.",
-  primaryActionLabel = "Start free trial",
-  primaryActionLink = "/signup",
+  primaryActionLabel = "Start selling today",
+  primaryActionLink = "https://shopy-the-app.vercel.app/",
   secondaryActionLabel = "Contact sales",
   secondaryActionLink = "/contact",
   bgColor = "bg-shopy-50"
@@ -29,10 +29,10 @@ const CTASection = ({
         <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">{description}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button className="bg-shopy-600 hover:bg-shopy-700 text-white px-8 py-6 h-auto text-base" asChild>
-            <Link to={primaryActionLink}>{primaryActionLabel}</Link>
+            <Link to={primaryActionLink} target="_blank" rel="noopener noreferrer">{primaryActionLabel}</Link>
           </Button>
           <Button variant="outline" className="px-8 py-6 h-auto text-base" asChild>
-            <Link to={secondaryActionLink}>{secondaryActionLabel}</Link>
+            <Link to={secondaryActionLink}>{secondaryActionLabel} </Link>
           </Button>
         </div>
       </div>
