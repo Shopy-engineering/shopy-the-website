@@ -46,6 +46,10 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
+  button {
+    @apply rounded-full;
+  }
+
   .container {
     @apply px-4 md:px-6 lg:px-8 max-w-7xl mx-auto;
   }
@@ -62,4 +66,3 @@
     @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
 }
-
