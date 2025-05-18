@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -14,8 +13,20 @@ import Layout from "@/components/Layout";
 import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTASection from "@/components/CTASection";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({ cloud: { cloudName: "djipuhfxy" } });
 
 const Index = () => {
+  // Cloudinary images
+  const heroImage = cld.image("photo-1742836531271-98fd8151d257_dfdpf4");
+  const testimonialAvatars = [
+    cld.image("Introspective_Young_Woman_Portrait_wgicxv"),
+    cld.image("Portrait_of_a_Young_Man_qckrj1"),
+    cld.image("Striking_Profile_Portrait_jofw4b"),
+  ];
+
   // Featured customers logos (placeholder content)
   const customers = [
     "Artisanal Cafe", "Boutique Apparel", "Eco Goods", 
@@ -62,19 +73,22 @@ const Index = () => {
       quote: "Shopy transformed our small pottery business. We went from selling at local markets to shipping nationwide in just months.",
       author: "Emily Richards",
       role: "Owner",
-      company: "Artisan Ceramics"
+      company: "Artisan Ceramics",
+      avatar: testimonialAvatars[0]
     },
     {
       quote: "The ease of setting up our store and managing inventory has been a game-changer for our boutique. Customer support is fantastic too!",
       author: "Michael Torres",
       role: "Founder",
-      company: "Urban Threads"
+      company: "Urban Threads",
+      avatar: testimonialAvatars[1]
     },
     {
       quote: "As a one-person business, I needed something simple yet powerful. Shopy is exactly that—it handles the tech so I can focus on creating.",
       author: "Sarah Johnson",
       role: "Creator",
-      company: "Handcrafted Journals"
+      company: "Handcrafted Journals",
+      avatar: testimonialAvatars[2]
     }
   ];
 
@@ -86,7 +100,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Empower your small business with{" "}
+                Turn viewers into buyers with{" "}
                 <span className="gradient-text">Shopy</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-8">
@@ -95,7 +109,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-shopy-600 hover:bg-shopy-700 text-white px-8 py-6 h-auto text-lg" asChild>
-                  <Link to="/signup">Start your free trial</Link>
+                    <Link to="https://shopy-the-app.vercel.app/" target="_blank" rel="noopener noreferrer">Start selling today</Link>
                 </Button>
                 <Button variant="outline" className="px-8 py-6 h-auto text-lg" asChild>
                   <Link to="/demo">See a demo</Link>
@@ -106,9 +120,9 @@ const Index = () => {
               </p>
             </div>
             <div className="lg:justify-self-end animate-fade-in">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                alt="Shopy platform dashboard" 
+              <AdvancedImage 
+                cldImg={heroImage}
+                alt="Shopy platform dashboard"
                 className="rounded-lg shadow-xl w-full max-w-lg mx-auto"
               />
             </div>
@@ -219,6 +233,7 @@ const Index = () => {
                 author={testimonial.author}
                 role={testimonial.role}
                 company={testimonial.company}
+                avatar={<AdvancedImage cldImg={testimonial.avatar} alt={testimonial.author} className="w-10 h-10 rounded-full object-cover" />}
               />
             ))}
           </div>

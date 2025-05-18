@@ -1,47 +1,21 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({ cloud: { cloudName: "djipuhfxy" } });
 
 const About = () => {
-  // Team members (placeholder content)
+  // Team members 
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      role: "CEO & Co-Founder",
-      bio: "Former product leader at Shopify, passionate about empowering small businesses.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY4NDk1NzQ1NA&ixlib=rb-4.0.3&q=80&w=300",
+      name: "Ssempijja Charles",
+      role: "Founder & CEO",
+      bio: "Former product design engineer at different startups, Charles founded Shopy to create a better solution for small businesses.",
+      image: cld.image("awxOH1hB_400x400_mmuz6s"), 
     },
-    {
-      name: "Michael Lee",
-      role: "CTO & Co-Founder",
-      bio: "Tech entrepreneur with 15+ years experience building scalable e-commerce platforms.",
-      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY4NDk1NzQ3OA&ixlib=rb-4.0.3&q=80&w=300",
-    },
-    {
-      name: "David Wilson",
-      role: "COO",
-      bio: "Operations expert focused on creating smooth experiences for our customers.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY4NDk1NzQ5OQ&ixlib=rb-4.0.3&q=80&w=300",
-    },
-    {
-      name: "Jessica Chen",
-      role: "VP of Product",
-      bio: "Product manager focused on building tools that small businesses actually need.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY4NDk1NzUyMQ&ixlib=rb-4.0.3&q=80&w=300",
-    },
-    {
-      name: "James Rodriguez",
-      role: "VP of Customer Success",
-      bio: "Dedicated to ensuring every small business thrives on our platform.",
-      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY4NDk1NzU0MA&ixlib=rb-4.0.3&q=80&w=300",
-    },
-    {
-      name: "Emily Park",
-      role: "VP of Marketing",
-      bio: "Marketing strategist helping small businesses grow their online presence.",
-      image: "https://images.unsplash.com/photo-1687394588829-11ae52574ae0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY4NDk1NzU1OA&ixlib=rb-4.0.3&q=80&w=300",
-    },
+    // Add more team members as needed
   ];
 
   // Company values
@@ -91,24 +65,18 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  Shopy was founded in 2022 by Sarah Johnson and Michael Lee, who
-                  met while working at larger e-commerce companies. They saw
-                  firsthand how small businesses were underserved by existing
+                  Shopy was founded in 2024 by Ssempijja Charles, who saw from his sister's business
+                  how small businesses were underserved by existing
                   platforms that were either too complex, too expensive, or both.
                 </p>
                 <p>
-                  Drawing on their experience, they set out to build an
+                  Drawing on this  experience, he set out to build an
                   e-commerce platform specifically designed for small businesses –
                   one that was powerful enough to compete with larger retailers,
                   but simple enough for anyone to use.
                 </p>
                 <p>
-                  Backed by Y Combinator in 2023, Shopy has quickly grown to serve
-                  thousands of small businesses across the globe, helping them
-                  sell millions of dollars in products and services online.
-                </p>
-                <p>
-                  Today, our team of 50+ passionate individuals continues to build
+                  Today, our team  continues to build
                   and improve our platform with one goal in mind: making
                   e-commerce accessible and effective for small businesses
                   everywhere.
@@ -116,8 +84,8 @@ const About = () => {
               </div>
             </div>
             <div className="lg:justify-self-end order-first lg:order-last mb-8 lg:mb-0">
-              <img
-                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
+              <AdvancedImage
+                cldImg={cld.image("photo-1739989934305-f91a77aae334_hd5f9n")}
                 alt="Shopy office"
                 className="rounded-lg shadow-xl w-full max-w-lg"
               />
@@ -165,8 +133,8 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg overflow-hidden hover-lift card-shadow">
-                <img
-                  src={member.image}
+                <AdvancedImage
+                  cldImg={member.image}
                   alt={member.name}
                   className="w-full h-64 object-cover"
                 />
@@ -192,7 +160,7 @@ const About = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
-            {["Y Combinator", "Sequoia Capital", "Andreessen Horowitz", "Accel"].map(
+            {["My Mom"].map(
               (investor, index) => (
                 <div
                   key={index}

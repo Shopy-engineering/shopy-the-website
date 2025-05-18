@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -7,9 +6,13 @@ import { Button } from "./ui/button";
 // Logo component for better organization
 const Logo = () => (
   <Link to="/" className="flex items-center gap-2">
-    <div className="w-10 h-10 rounded-lg bg-shopy-500 flex items-center justify-center">
-      <span className="text-white font-bold text-xl">S</span>
-    </div>
+    <img
+      src="/favicons/favicon-32x32.png"
+      alt="Shopy logo"
+      className="w-10 h-10 rounded-lg bg-shopy-500"
+      width={40}
+      height={40}
+    />
     <span className="font-bold text-xl">Shopy</span>
   </Link>
 );
