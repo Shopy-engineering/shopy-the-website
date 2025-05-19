@@ -50,10 +50,22 @@ const Header = () => {
         {/* CTA buttons */}
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" asChild>
-            <Link to="/login">Log in</Link>
+            <a
+              href="https://shopy-the-app.vercel.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Log in
+            </a>
           </Button>
           <Button className="bg-shopy-600 hover:bg-shopy-700 text-white" asChild>
-            <Link to="/signup">Start free trial</Link>
+            <a
+              href="https://shopy-the-app.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start free trial
+            </a>
           </Button>
         </div>
         
@@ -83,10 +95,22 @@ const Header = () => {
             ))}
             <div className="flex flex-col gap-2 pt-4 border-t border-gray-100 mt-2">
               <Button variant="outline" className="w-full" asChild>
-                <Link to="/login">Log in</Link>
+                <a
+                  href="https://shopy-the-app.vercel.app/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Log in
+                </a>
               </Button>
               <Button className="bg-shopy-600 hover:bg-shopy-700 text-white w-full" asChild>
-                <Link to="/signup">Start free trial</Link>
+                <a
+                  href="https://shopy-the-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start free trial
+                </a>
               </Button>
             </div>
           </div>
