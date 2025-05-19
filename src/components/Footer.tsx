@@ -69,7 +69,7 @@ const Footer = () => {
               Helping small businesses succeed online with powerful e-commerce tools.
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <a href="https://x.com/shopy_1nc" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-shopy-100 flex items-center justify-center transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
