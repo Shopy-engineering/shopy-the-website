@@ -1,9 +1,12 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({ cloud: { cloudName: "djipuhfxy" } });
 
 const Careers = () => {
   // State for filtering jobs
@@ -14,69 +17,6 @@ const Careers = () => {
 
   // Job listings (placeholder content)
   const allJobs = [
-    {
-      id: "1",
-      title: "Senior Frontend Engineer",
-      department: "Engineering",
-      location: "Remote (US)",
-      type: "Full-time"
-    },
-    {
-      id: "2",
-      title: "Product Manager",
-      department: "Product",
-      location: "San Francisco, CA",
-      type: "Full-time"
-    },
-    {
-      id: "3",
-      title: "Customer Success Manager",
-      department: "Customer Success",
-      location: "Remote (Global)",
-      type: "Full-time"
-    },
-    {
-      id: "4",
-      title: "Growth Marketing Specialist",
-      department: "Marketing",
-      location: "New York, NY",
-      type: "Full-time"
-    },
-    {
-      id: "5",
-      title: "Backend Engineer",
-      department: "Engineering",
-      location: "Remote (US)",
-      type: "Full-time"
-    },
-    {
-      id: "6",
-      title: "UX/UI Designer",
-      department: "Product",
-      location: "San Francisco, CA",
-      type: "Full-time"
-    },
-    {
-      id: "7",
-      title: "Technical Support Specialist",
-      department: "Customer Success",
-      location: "Remote (Global)",
-      type: "Full-time"
-    },
-    {
-      id: "8",
-      title: "Content Marketing Manager",
-      department: "Marketing",
-      location: "Remote (US)",
-      type: "Full-time"
-    },
-    {
-      id: "9",
-      title: "Operations Manager",
-      department: "Operations",
-      location: "San Francisco, CA",
-      type: "Full-time"
-    }
   ];
 
   // Filter jobs based on active category
@@ -111,6 +51,15 @@ const Careers = () => {
       description: "Regular company retreats, team events, and opportunities to connect."
     }
   ];
+
+  // Images for the mission and team sections
+  const missionImage = cld.image("Minimalist_Home_Office_dxuq5u"); 
+  const teamImages = [
+    cld.image("Black_and_White_Photo_of_Professionals_Working_Indoors_wumqx2"),
+    cld.image("Modern_Workstation_with_Coffee_and_Plant_x36vhb"),
+    cld.image("shopy/team-photo-3"),
+    cld.image("shopy/team-photo-4"),
+  ]; 
 
   return (
     <Layout>
@@ -149,8 +98,8 @@ const Careers = () => {
               </p>
             </div>
             <div className="lg:justify-self-end order-first lg:order-last mb-8 lg:mb-0">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+              <AdvancedImage
+                cldImg={missionImage}
                 alt="Shopy team collaboration"
                 className="rounded-lg shadow-xl w-full max-w-lg"
               />
@@ -285,20 +234,15 @@ const Careers = () => {
       </section>
 
       {/* Team Photos Section */}
+      {/*
       <section className="py-20">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">Life at Shopy</h2>
-          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-              "https://images.unsplash.com/photo-1542744094-3a31f272c490",
-              "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
-              "https://images.unsplash.com/photo-1556761175-5973dc0f32e7"
-            ].map((image, index) => (
-              <img
+            {teamImages.map((img, index) => (
+              <AdvancedImage
                 key={index}
-                src={image}
+                cldImg={img}
                 alt={`Team at Shopy ${index + 1}`}
                 className="rounded-lg w-full h-48 object-cover"
               />
@@ -306,6 +250,7 @@ const Careers = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Open Application Section */}
       <section className="py-20 bg-gray-50">

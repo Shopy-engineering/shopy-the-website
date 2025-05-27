@@ -112,7 +112,7 @@ const Index = () => {
                     <Link to="https://shopy-the-app.vercel.app/" target="_blank" rel="noopener noreferrer">Start selling today</Link>
                 </Button>
                 <Button variant="outline" className="px-8 py-6 h-auto text-lg" asChild>
-                  <Link to="/demo">See a demo</Link>
+                  <Link to="#">See a demo</Link>
                 </Button>
               </div>
               <p className="text-sm text-gray-500 mt-4">

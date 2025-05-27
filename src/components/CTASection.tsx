@@ -19,7 +19,7 @@ const CTASection = ({
   primaryActionLabel = "Start selling today",
   primaryActionLink = "https://shopy-the-app.vercel.app/",
   secondaryActionLabel = "Contact sales",
-  secondaryActionLink = "/contact",
+  secondaryActionLink = "mailto:ssempijacharz@gmail.com?subject=Shopy%20Sales",
   bgColor = "bg-shopy-50"
 }: CTASectionProps) => {
   return (
@@ -32,7 +32,7 @@ const CTASection = ({
             <Link to={primaryActionLink} target="_blank" rel="noopener noreferrer">{primaryActionLabel}</Link>
           </Button>
           <Button variant="outline" className="px-8 py-6 h-auto text-base" asChild>
-            <Link to={secondaryActionLink}>{secondaryActionLabel} </Link>
+            <a href={secondaryActionLink}>{secondaryActionLabel}</a>
           </Button>
         </div>
       </div>

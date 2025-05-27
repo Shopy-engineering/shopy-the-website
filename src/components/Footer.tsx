@@ -9,11 +9,11 @@ const Footer = () => {
     {
       title: "Product",
       links: [
-        { title: "Online Storefront", path: "/features/storefront" },
-        { title: "Checkout & Payments", path: "/features/payments" },
-        { title: "Shipping & Fulfillment", path: "/features/shipping" },
-        { title: "Marketing & Analytics", path: "/features/marketing" },
-        { title: "Inventory Management", path: "/features/inventory" },
+        { title: "Online Storefront", path: "#" },
+        { title: "Checkout & Payments", path: "#" },
+        { title: "Shipping & Fulfillment", path: "#" },
+        { title: "Marketing & Analytics", path: "#" },
+        { title: "Inventory Management", path: "#" },
       ],
     },
     {
@@ -23,29 +23,46 @@ const Footer = () => {
         { title: "News Room", path: "/news" },
         { title: "Blog", path: "/blog" },
         { title: "Careers", path: "/careers" },
-        { title: "Contact", path: "/contact" },
+        { title: "Contact", path: "#" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { title: "Help Center", path: "/help" },
-        { title: "API Documentation", path: "/developers" },
-        { title: "Community Forum", path: "/community" },
-        { title: "Partner Program", path: "/partners" },
-        { title: "Success Stories", path: "/success-stories" },
+        { title: "Help Center", path: "#" },
+        { title: "API Documentation", path: "#" },
+        { title: "Community Forum", path: "#" },
+        { title: "Partner Program", path: "#" },
+        { title: "Success Stories", path: "#" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { title: "Privacy Policy", path: "/privacy" },
-        { title: "Terms of Service", path: "/terms" },
-        { title: "Cookie Policy", path: "/cookies" },
-        { title: "Security", path: "/security" },
-        { title: "Compliance", path: "/compliance" },
+        { title: "Privacy Policy", path: "#" },
+        { title: "Terms of Service", path: "#" },
+        { title: "Cookie Policy", path: "#" },
+        { title: "Security", path: "#" },
+        { title: "Compliance", path: "#" },
       ],
     },
+  ];
+
+  const existingRoutes = [
+    "/features/storefront",
+    "/features/payments",
+    "/features/shipping",
+    "/features/marketing",
+    "/features/inventory",
+    "/about",
+    "/news",
+    "/blog",
+    "/careers",
+    "/contact",
+    "/help",
+    "/privacy",
+    "/terms",
+    "/cookies",
   ];
 
   return (
@@ -156,7 +173,7 @@ const Footer = () => {
                 {section.links.map((link) => (
                   <li key={link.title}>
                     <Link
-                      to={link.path}
+                      to={existingRoutes.includes(link.path) ? link.path : "#"}
                       className="text-gray-600 hover:text-shopy-600 transition-colors"
                     >
                       {link.title}
@@ -175,13 +192,13 @@ const Footer = () => {
               © {currentYear} Shopy, Inc. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link to="/terms" className="text-gray-500 text-sm hover:text-shopy-600 transition-colors">
+              <Link to="#" className="text-gray-500 text-sm hover:text-shopy-600 transition-colors">
                 Terms
               </Link>
-              <Link to="/privacy" className="text-gray-500 text-sm hover:text-shopy-600 transition-colors">
+              <Link to="#" className="text-gray-500 text-sm hover:text-shopy-600 transition-colors">
                 Privacy
               </Link>
-              <Link to="/cookies" className="text-gray-500 text-sm hover:text-shopy-600 transition-colors">
+              <Link to="#" className="text-gray-500 text-sm hover:text-shopy-600 transition-colors">
                 Cookies
               </Link>
             </div>
