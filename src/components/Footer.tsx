@@ -76,7 +76,7 @@ const Footer = () => {
               <img
                 src="/favicons/favicon-32x32.png"
                 alt="Shopy logo"
-                className="w-8 h-8 rounded-lg bg-shopy-500"
+                className="w-8 h-8 rounded-lg"
                 width={32}
                 height={32}
               />
