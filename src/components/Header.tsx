@@ -9,7 +9,7 @@ const Logo = () => (
     <img
       src="/favicons/favicon-32x32.png"
       alt="Shopy logo"
-      className="w-10 h-10 rounded-lg bg-shopy-500"
+      className="w-10 h-10 rounded-lg"
       width={40}
       height={40}
     />
