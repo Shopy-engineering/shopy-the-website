@@ -11,7 +11,7 @@ const About = () => {
   const teamMembers = [
     {
       name: "Ssempijja Charles",
-      role: "Founder & CEO",
+      role: "Founder",
       bio: "Former product design engineer at different startups, Charles founded Shopy to create a better solution for small businesses.",
       image: cld.image("awxOH1hB_400x400_mmuz6s"), 
     },
